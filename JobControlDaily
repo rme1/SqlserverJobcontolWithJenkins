@@ -53,16 +53,16 @@ pipeline {
             }
         }
         stage('Waiting for Europe') {
-                steps {
-                    script {
-                        try {
-                            echo('fWaiting for Europe ...')
-                        } catch (e) {
-                            echo('detected failure: Waiting for Europe')
-                            throw(e)
-                        }
+            steps {
+                script {
+                    try {
+                        echo('fWaiting for Europe ...')
+                    } catch (e) {
+                        echo('detected failure: Waiting for Europe')
+                        throw(e)
                     }
                 }
+            }
 		}
         stage('EUROPE_JH') {
             parallel {
