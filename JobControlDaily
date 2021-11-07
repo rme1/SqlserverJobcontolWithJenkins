@@ -63,7 +63,7 @@ pipeline {
                     }
                 }
             }
-		}
+        }
         stage('EUROPE_JH') {
             parallel {
                 stage('STA_TO_PSTA_BRAIN') {
