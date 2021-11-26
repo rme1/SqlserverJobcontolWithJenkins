@@ -21,7 +21,7 @@ pipeline {
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
                     TIMEZONE = 'Asia'
-                    welcome.WaitForNextTimeZone()
+                    PowerShellFunctions.WaitForNextTimeZone()
                     error "Program failed, please read logs..."
                 }
             }
