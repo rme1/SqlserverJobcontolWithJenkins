@@ -47,7 +47,7 @@ pipeline {
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_36()')
-                                // throw(e)
+                                throw(e)
                             }
                         }
                     }
@@ -64,7 +64,7 @@ pipeline {
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_49()')
-                                // throw(e)
+                                throw(e)
                             }
                         }
                     }
