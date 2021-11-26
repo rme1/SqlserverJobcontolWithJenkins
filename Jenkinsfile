@@ -18,8 +18,10 @@ pipeline {
     stages {
         stage(asdf){
             steps {
-                echo('fnTestLibary()')
-                TestLibary.fnTestLibary()
+                script {                
+                    echo('fnTestLibary()')
+                    fnTestLibary()
+                }
             }
         }
         stage('WAIT_UNTIL_ASIA_STARTS') {
