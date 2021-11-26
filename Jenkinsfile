@@ -38,7 +38,7 @@ pipeline {
         }
         */
         stage('ASISA') {
-            parallel {
+            // parallel {
                 stage('STA_TO_PSTA_ISCALA_36') {
                     steps {
                         script {
@@ -70,8 +70,8 @@ pipeline {
                             }
                         }
                     }
-                }
-                                   }
+                }                      
+            // }
         }
         /*
         stage('WAIT_UNTIL_EUROPE_STARTS') {
