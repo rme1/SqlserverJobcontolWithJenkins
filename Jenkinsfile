@@ -27,11 +27,23 @@ pipeline {
         stage('WAIT_UNTIL_ASIA_STARTS') {
             environment {
                 TIMEZONE = 'Asia'
-            }            
+            }     
+                   
             steps {
-                echo('WaitForNextTimeZone("ASIA")')
-                // PowerShellFunctions.WaitForNextTimeZone()
-                throw('Abbruch ...')
+                        script {
+                            try {
+                               if (params.DRY_RUN == true) {
+                                   echo('WaitForNextTimeZone("ASIA")')
+                               } else {
+                                   // function_PSTA_ISCALA_36()
+                                   welcome.fnWelcome('WaitForNextTimeZone("ASIA")')
+                                   throw("Abbruch ...")
+                               }
+                            } catch (e) {
+                                echo('WaitForNextTimeZone("ASIA")')
+                                throw(e)
+                            }
+                        }              
             }
         }
         stage('ASISA') {
