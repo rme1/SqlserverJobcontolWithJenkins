@@ -1,4 +1,4 @@
-@Library('SqlserverJobcontolWithJenkinsLibary') ..
+@Library('SqlserverJobcontolWithJenkinsLibary') __
 
 pipeline {
     agent any   
