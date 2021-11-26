@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage(TestLibary){
             steps {
-                echo('WaitForNextTimeZone("ASIA")')
+                echo('fnTestLibary()')
                 fnTestLibary()
             }
         }
