@@ -21,9 +21,7 @@ pipeline {
             }             
             steps {
                 script {                
-                    echo('welcome()')
-                    welcome.fnWelcome("ist super")
-                    welcome.WaitForNextTimeZone()
+                    PowerShellFunctions.WaitForNextTimeZone()
                     error "absichtlicher Abbruch..."
                 }
             }
