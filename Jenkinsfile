@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {                
                     echo('fnTestLibary()')
-                    TestLibary.fnTestLibary()
+                    TestSqlserverJobcontolWithJenkinsLibaryLibary.fnTestLibary()
                 }
             }
         }
