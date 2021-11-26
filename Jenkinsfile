@@ -20,6 +20,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
+                    thow("Abbruch ...")
                 }
             }
         }
