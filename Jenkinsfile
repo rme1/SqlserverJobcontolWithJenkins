@@ -43,7 +43,8 @@ pipeline {
                                if (params.DRY_RUN == true) {
                                    echo('DRY_RUN = TRUE : function_PSTA_ISCALA_36()')
                                } else {
-                                   function_PSTA_ISCALA_36()
+                                   // function_PSTA_ISCALA_36()
+                                   welcome.fnWelcome("function_PSTA_ISCALA_36()")
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_36()')
@@ -58,9 +59,10 @@ pipeline {
                             try {
                                if (params.DRY_RUN == true) {
                                    echo('DRY_RUN = TRUE : function_PSTA_ISCALA_49()')
+                                   throw("Abbruch ...")                                   
                                } else {
                                    function_PSTA_ISCALA_49()
-                                   throw('Abbruch ...')
+                                   throw("Abbruch ...")
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_49()')
