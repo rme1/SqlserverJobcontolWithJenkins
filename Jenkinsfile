@@ -29,7 +29,8 @@ pipeline {
             }            
             steps {
                 echo('WaitForNextTimeZone("ASIA")')
-                WaitForNextTimeZone()
+                PowerShellFunctions.WaitForNextTimeZone()
+                thow("Abbruch ...")
             }
         }
         stage('ASISA') {
