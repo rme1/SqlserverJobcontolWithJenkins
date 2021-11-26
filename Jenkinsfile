@@ -1,6 +1,5 @@
-// https://github.com/jenkinsci/parameterized-scheduler-plugin
-// https://github.com/jenkinsci/parameterized-scheduler-plugin/blob/master/README.md
-// ${params.DRY_RUN}
+@library('SqlserverJobcontolWithJenkinsLibary')
+
 pipeline {
     agent any   
     options {
