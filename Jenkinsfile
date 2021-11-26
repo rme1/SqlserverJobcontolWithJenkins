@@ -16,11 +16,13 @@ pipeline {
     }   
     stages {
         stage(asdf){
+            environment {
+                TIMEZONE = 'Asia'
+            }             
             steps {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
-                    TIMEZONE = 'Asia'
                     welcome.fnRunPowerShell("asdf")
                     error "absichtlicher Abbruch..."
                 }
