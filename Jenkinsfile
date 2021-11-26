@@ -20,6 +20,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
+                    PowerShellFunctions.WaitForNextTimeZone()
                     error "Program failed, please read logs..."
                 }
             }
