@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {                
                     echo('welcome()')
-                    welcome("ist super")
+                    welcome.fnWelcome("ist super")
                 }
             }
         }
