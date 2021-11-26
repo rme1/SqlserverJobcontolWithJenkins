@@ -22,7 +22,7 @@ pipeline {
                     welcome.fnWelcome("ist super")
                     TIMEZONE = 'Asia'
                     welcome.fnRunPowerShell("asdf")
-                    error "Program failed, please read logs..."
+                    error "absichtlicher Abbruch..."
                 }
             }
         }
