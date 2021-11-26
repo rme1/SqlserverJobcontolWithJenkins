@@ -20,6 +20,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
+                    TIMEZONE = 'Asia'
                     welcome.WaitForNextTimeZone()
                     error "Program failed, please read logs..."
                 }
