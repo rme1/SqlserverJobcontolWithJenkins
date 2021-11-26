@@ -23,7 +23,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
-                    welcome.fnRunPowerShell("asdf")
+                    welcome.WaitForNextTimeZone()
                     error "absichtlicher Abbruch..."
                 }
             }
