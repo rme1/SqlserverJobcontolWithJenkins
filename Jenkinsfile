@@ -16,6 +16,12 @@ pipeline {
         choice(name: 'WAITMINUTES', choices: ['1', '2', '3', '4', '5', '6', '7', '8'], description: 'Wartezeit zwischen den Zeitzonen [nur bei DRY_RUN = TRUE]')
     }   
     stages {
+        stage(TestLibary){
+            steps {
+                echo('WaitForNextTimeZone("ASIA")')
+                fnTestLibary()
+            }
+        }
         stage('WAIT_UNTIL_ASIA_STARTS') {
             environment {
                 TIMEZONE = 'Asia'
