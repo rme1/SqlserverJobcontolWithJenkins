@@ -23,6 +23,7 @@ pipeline {
                 }
             }
         }
+        /*
         stage('WAIT_UNTIL_ASIA_STARTS') {
             environment {
                 TIMEZONE = 'Asia'
@@ -32,6 +33,7 @@ pipeline {
                 WaitForNextTimeZone()
             }
         }
+        */
         stage('ASISA') {
             parallel {
                 stage('STA_TO_PSTA_ISCALA_36') {
@@ -58,6 +60,7 @@ pipeline {
                                    echo('DRY_RUN = TRUE : function_PSTA_ISCALA_49()')
                                } else {
                                    function_PSTA_ISCALA_49()
+                                   throw('Abbruch ...')
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_49()')
