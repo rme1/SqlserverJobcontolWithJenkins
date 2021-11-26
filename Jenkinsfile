@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {                
                     echo('fnTestLibary()')
-                    fnTestLibary()
+                    TestLibary.fnTestLibary()
                 }
             }
         }
