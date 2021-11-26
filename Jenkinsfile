@@ -11,6 +11,7 @@ pipeline {
         string(name: 'NAME', defaultValue: 'Teschtle Ralf Merznicht', description: 'hier kann Zusatzinfo eingetrgen werden')
         text(name: 'DESC', defaultValue: 'Teschtle Beschreibung Ralf Merznicht', description: 'hier kann Zusatzinfo eingetrgen werden')
         booleanParam(name: 'DRY_RUN', defaultValue: true, description: 'Do not execute Sqlserver Procedures')
+        choice(name: 'DEVTESTPROD', choices: ['Dev', 'Test', 'Prod'], description: 'Server auswählen (aktuell nur DUMMY Parameter)')        
         choice(name: 'SLEEPSECONDS', choices: ['30', '10', '20', '40', '50', '60', '120', '240'], description: 'Sekunden SLEEP Dauer in der Warteschleife')
         choice(name: 'WAITMINUTES', choices: ['1', '2', '3', '4', '5', '6', '7', '8'], description: 'Wartezeit zwischen den Zeitzonen [nur bei DRY_RUN = TRUE]')
     }   
