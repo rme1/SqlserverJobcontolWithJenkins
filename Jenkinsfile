@@ -20,7 +20,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
-                    throw("Abbruch ...")
+                    throw('Abbruch ...')
                 }
             }
         }
