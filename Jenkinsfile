@@ -1,4 +1,4 @@
-@Library('SqlserverJobcontolWithJenkinsLibary') __
+@Library('MerziLibs') __
 
 pipeline {
     agent any   
@@ -18,8 +18,8 @@ pipeline {
         stage(asdf){
             steps {
                 script {                
-                    echo('fnTestLibary()')
-                    fnTestLibary()
+                    echo('welcome()')
+                    welcome('ist super')
                 }
             }
         }
