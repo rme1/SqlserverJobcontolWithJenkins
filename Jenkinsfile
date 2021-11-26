@@ -21,7 +21,7 @@ pipeline {
             }             
             steps {
                 script {                
-                    PowerShellFunctions.WaitForNextTimeZone()
+                    psfunctions.WaitForNextTimeZone()
                     error "absichtlicher Abbruch..."
                 }
             }
