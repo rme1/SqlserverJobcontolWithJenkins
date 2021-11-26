@@ -15,40 +15,28 @@ pipeline {
         choice(name: 'WAITMINUTES', choices: ['1', '2', '3', '4', '5', '6', '7', '8'], description: 'Wartezeit zwischen den Zeitzonen [nur bei DRY_RUN = TRUE]')
     }   
     stages {
-        stage(asdf){
-            environment {
-                TIMEZONE = 'Asia'
-            }             
-            steps {
-                script {                
-                    psfunctions.WaitForNextTimeZone()
-                    error "absichtlicher Abbruch..."
-                }
-            }
-        }
+        /*
         stage('WAIT_UNTIL_ASIA_STARTS') {
             environment {
                 TIMEZONE = 'Asia'
             }     
                    
             steps {
-                        script {
-                            try {
-                               if (params.DRY_RUN == true) {
-                                   echo('WaitForNextTimeZone("ASIA")')
-                                   throw("Abbruch ...")                                   
-                               } else {
-                                   // function_PSTA_ISCALA_36()
-                                   welcome.fnWelcome('WaitForNextTimeZone("ASIA")')
-                                   throw("Abbruch ...")
-                               }
-                            } catch (e) {
-                                echo('WaitForNextTimeZone("ASIA")')
-                                throw(e)
-                            }
-                        }              
+                    script {
+                        try {
+                           if (params.DRY_RUN == true) {
+                               echo('WaitForNextTimeZone("ASIA")')                    
+                           } else {
+                               psfunctions.WaitForNextTimeZone()
+                           }
+                        } catch (e) {
+                            echo('WaitForNextTimeZone("ASIA")')
+                            throw(e)
+                        }
+                    }              
             }
         }
+        */
         stage('ASISA') {
             parallel {
                 stage('STA_TO_PSTA_ISCALA_36') {
@@ -58,8 +46,7 @@ pipeline {
                                if (params.DRY_RUN == true) {
                                    echo('DRY_RUN = TRUE : function_PSTA_ISCALA_36()')
                                } else {
-                                   // function_PSTA_ISCALA_36()
-                                   welcome.fnWelcome("function_PSTA_ISCALA_36()")
+                                   psta_iscala_36.function_PSTA_ISCALA_36()
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_36()')
@@ -73,11 +60,9 @@ pipeline {
                         script {
                             try {
                                if (params.DRY_RUN == true) {
-                                   echo('DRY_RUN = TRUE : function_PSTA_ISCALA_49()')
-                                   throw("Abbruch ...")                                   
+                                   echo('DRY_RUN = TRUE : function_PSTA_ISCALA_49()')     
                                } else {
-                                   function_PSTA_ISCALA_49()
-                                   throw("Abbruch ...")
+                                   psta_iscala_49.function_PSTA_ISCALA_49()
                                }
                             } catch (e) {
                                 echo('detected failure: function_PSTA_ISCALA_49()')
@@ -88,6 +73,7 @@ pipeline {
                 }
                                    }
         }
+        /*
         stage('WAIT_UNTIL_EUROPE_STARTS') {
             environment {
                 TIMEZONE = 'Europe'
@@ -320,6 +306,7 @@ pipeline {
             }
         }   
     }
+    */
     post {
         always {
             echo 'This will always run'
