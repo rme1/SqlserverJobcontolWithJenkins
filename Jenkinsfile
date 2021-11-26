@@ -20,7 +20,7 @@ pipeline {
                 script {                
                     echo('welcome()')
                     welcome.fnWelcome("ist super")
-                    thow("Abbruch ...")
+                    throw("Abbruch ...")
                 }
             }
         }
@@ -34,6 +34,7 @@ pipeline {
                             try {
                                if (params.DRY_RUN == true) {
                                    echo('WaitForNextTimeZone("ASIA")')
+                                   throw("Abbruch ...")                                   
                                } else {
                                    // function_PSTA_ISCALA_36()
                                    welcome.fnWelcome('WaitForNextTimeZone("ASIA")')
